@@ -34,7 +34,7 @@ git clone https://github.com/y00tss/ETHWallet
 2. Open Docker Desktop on your Windows and after use next command:
 ```bash
 cd ETHWallet
-
+```
 3. Creation .env file
 Go back to Notion and copy the ENV content. Create a new file called .env in the root directory of the project and paste the content into it.
 
