@@ -38,7 +38,7 @@ cd ETHWallet
 3. Creation .env file
 Go back to Notion and copy the ENV content. Create a new file called .env in the root directory of the project and paste the content into it.
 ```
-4.Next step is creating the container and start the app by following command:
+4. Next step is creating the container and start the app by following command:
 ```bash
 docker-compose up --build
 ```
