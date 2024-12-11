@@ -3,7 +3,7 @@ services:
   backend:
     build:
       dockerfile: Dockerfile
-#    restart: always
+    restart: always
     command: >
       /bin/sh -c "
       alembic upgrade head &&

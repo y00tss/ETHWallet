@@ -17,14 +17,12 @@ class EthWalletService(WalletService):
         """
         Get balance of the wallet
         """
-        print(f"Connecting to blockchain node at {self.rpc_url}")
         if not self.web3.is_connected():
             raise ConnectionError("Failed to connect to blockchain node")
 
         checksum_address = self.web3.to_checksum_address(self.address)
 
         if self.contract_address:
-            print(f"Fetching ERC-20 balance for address: {checksum_address}")
             contract = self.web3.eth.contract(
                 address=self.web3.to_checksum_address(self.contract_address),
                 abi=ERC20_ABI  # noqa

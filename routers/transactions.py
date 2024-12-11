@@ -68,11 +68,9 @@ async def send_transaction(
     """
     try:
         wallet = await WalletRepository(session).get_by_id(id=wallet_id, user_id=user.id) # noqa
-        print("Wallet", wallet)
         wallet_service = WalletFlow.get_wallet_service(
             currency=wallet.currency, address=wallet.address
         )
-        print("Wallet service", wallet_service)
         txn_hash = await wallet_service.send_transaction(
             to_address=to_address, amount=amount, private_key=wallet.private_key
         )

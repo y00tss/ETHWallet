@@ -46,7 +46,7 @@ async def get_wallet_by_id(
 
 @router.get("/{id}/balance")
 async def get_wallet_balance(
-        wallet_id: int,
+        id: int,
         session: AsyncSession = Depends(get_async_session),
         user: User = Depends(current_user)
 ):
@@ -54,7 +54,7 @@ async def get_wallet_balance(
     Get wallet balance
     """
     try:
-        wallet = await WalletRepository(session).get_by_id(id=wallet_id, user_id=user.id)  # noqa
+        wallet = await WalletRepository(session).get_by_id(id=id, user_id=user.id)
 
         balance = await WalletFlow.get_wallet_service(
             currency=wallet.currency, address=wallet.address
